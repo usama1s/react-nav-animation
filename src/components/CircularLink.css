@@ -1,0 +1,87 @@
+:root {
+	--duration: 750ms;
+}
+
+.circular-link {
+	height: 314px;
+    padding: 10px;
+    /* background: #060606; */
+	background: #191919;
+}
+
+.circular-link .text-ring {
+	padding: 6px;
+}
+
+.how-it-works {
+	/* top: -110px; */
+}
+
+.circular-link .container-icon {
+	margin: 35px;
+}
+
+.road-map{
+	top: -68px;
+    right: -108px;
+}
+
+.faqs {
+	bottom: -147px;
+    left: 107px;
+}
+
+.about-the-quest{
+	top: -68px;
+    right: 108px;
+}
+
+.novels {
+	bottom: -147px;
+    left: -107px;
+}
+
+.circular-link-redeem{
+	height: 208px;
+    padding: 10px;
+	background: #191919;;
+}
+
+.circular-link-img {
+	height: 159px;
+    /* padding: 10px; */
+}
+
+a .text-ring {
+	transform: translate3d(-50%, -50%, 0px) scale3d(1, 1, 1) rotateZ(0deg) skew(0deg, 0deg) scale(0.93);
+	transform-style: preserve-3d;
+	transition: var(--duration) linear;
+}
+
+a .title-container {
+	transition: transform var(--duration) linear;
+}
+
+@media screen and (max-width: 768px) {
+	a .text-ring {
+		transform: translate3d(-50%, -50%, 0px) scale3d(1, 1, 1) rotateZ(180deg) skew(0deg, 0deg) scale(0.93);
+		transform-style: preserve-3d;
+		transition: var(--duration) cubic-bezier(.73,.23,.85,.47)
+	}
+	a .title-container {
+		transform: translateY(0);
+		transition: transform var(--duration) linear;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	a:hover .text-ring {
+		transform: translate3d(-50%, -50%, 0px) scale3d(1, 1, 1) rotateZ(180deg) skew(0deg, 0deg) scale(0.93);
+		transform-style: preserve-3d;
+		transition: var(--duration) cubic-bezier(0.73, 0.23, 0.85, 0.47);
+	}
+	a:hover .title-container {
+		transform: translateY(0);
+		transition: transform var(--duration) linear;
+	}
+}
