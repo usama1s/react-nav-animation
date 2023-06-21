@@ -196,7 +196,7 @@ function Navbar({ title, subTitle }) {
             </div>
           </a>
 
-          <div className="nav-text font-cardinal">
+          <div className="nav-text font-romie">
             <h1 className=" fadeup">{title}&nbsp;</h1>
             <small className=" fadeup">{subTitle}</small>
           </div>
@@ -320,7 +320,7 @@ function Navbar({ title, subTitle }) {
       >
         <div className="">
           <a href={baseURL}>
-            {updateNavbar && (
+            {1 && (
               <div onMouseEnter={handleMouseEnter} className="logo-wrapper">
                 <Lottie
                   direction={1}

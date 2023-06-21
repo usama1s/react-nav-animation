@@ -1656,6 +1656,7 @@ width: auto;
   align-items: center;
   display: flex;
   position: absolute;
+  background-image: repeating-linear-gradient( -45deg, transparent 0px, transparent 5px, #8080800f 1px, #8080800f 1px, transparent 6px);
 }
 
 .nav-item {
@@ -2701,7 +2702,7 @@ width: auto;
 }
 .close-full-nav {
   animation-delay: 0.8s !important;
-  animation: slideDownFullNav 2.2s forwards;
+  animation: slideDownFullNav 2.5s forwards;
 }
 @keyframes slideUpFullNav {
   from {
@@ -2805,6 +2806,26 @@ width: auto;
 @keyframes slideDownTopNav {
   from {
     transform: translateY(-150%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+.second-top-nav .nav-text{
+  overflow: hidden;
+}
+.second-top-nav.open-top-nav .nav-text>*{
+  animation-delay: 1s !important;
+  animation: slideUpText 1s forwards;
+  transform: translateY(200%);
+}
+.second-top-nav.close-top-nav .nav-text>*{
+animation: none;
+transform: translateY(0) !important;
+}
+@keyframes slideUpText {
+  from {
+    transform: translateY(200%);
   }
   to {
     transform: translateY(0%);
@@ -2972,24 +2993,26 @@ width: auto;
   height: 0%;
   width: 0%;
   position: relative;
+  border-radius: 50% 50% 0 0;
 }
 .close-full-nav .tree {
-  animation: closeTree 1.3s forwards;
+  animation: closeTree 2s forwards;
   animation-delay: 0s;
   overflow: hidden;
   position: relative;
   width: 200%;
   height: 200%;
+  border-radius: 50% 50% 0 0;
 }
 
 @keyframes openTree {
   from {
-    border-radius: 50% 50% 0 0;
+    /* border-radius: 50% 50% 0 0; */
     height: 0%;
     width: 0%;
   }
   to {
-    border-radius: 0 0;
+    /* border-radius: 0 0; */
     height: 200%;
     width: 200%;
   }
@@ -2997,7 +3020,7 @@ width: auto;
 
 @keyframes closeTree {
   from {
-    border-radius: 0 0;
+    /* border-radius: 0 0; */
     height: 200%;
     width: 200%;
   }
@@ -3012,7 +3035,7 @@ width: auto;
 @media screen and (min-width: 767px) {
   a .inner-nav-item {
     transform: translateY(100%);
-    transition: transform 0.9s ease-out, opacity 1s ease-out;
+    transition: transform 0.9s ease-out;
     opacity: 0;
   }
   a .inner-nav-item .text-cover {
@@ -3096,7 +3119,7 @@ a:hover .item-title-img {
   a:hover .inner-nav-item {
     transform: translateY(0);
     opacity: 1;
-    transition: transform 0.9s ease-in-out, opacity 1s ease-in-out;
+    transition: transform 0.9s ease-in-out;
   }
 
   a:hover .inner-nav-item .text-cover h5 {
